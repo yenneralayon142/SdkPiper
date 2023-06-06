@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace QnABotWithMSI.Dialogs
 {
-    public class RootDialogP : ComponentDialog
+    public class RootDialogSuplent : ComponentDialog
     {
-        public RootDialogP()
+        public RootDialogSuplent()
         {
             var waterfallStep = new WaterfallStep[]
             {
