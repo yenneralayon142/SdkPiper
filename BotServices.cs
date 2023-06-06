@@ -4,6 +4,7 @@
 using Microsoft.Bot.Builder.AI.QnA;
 using Microsoft.Bot.Builder.AI.QnA.Models;
 using Microsoft.Extensions.Configuration;
+using QnABotWithMSI.Contracts;
 using System;
 
 namespace Microsoft.BotBuilderSamples

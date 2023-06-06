@@ -12,6 +12,9 @@ using Microsoft.BotBuilderSamples.Dialogs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using QnABotWithMSI.Contracts;
+using QnABotWithMSI.Dialogs;
+using QnABotWithMSI.Extensions;
 
 namespace Microsoft.BotBuilderSamples
 {
@@ -39,7 +42,8 @@ namespace Microsoft.BotBuilderSamples
             services.AddSingleton<IBotServices, BotServices>();
 
             // Create the storage we'll be using for User and Conversation state. (Memory is great for testing purposes.)
-            services.AddSingleton<IStorage, MemoryStorage>();
+
+            services.AddSingleton<IStorage, MemoryStorage>(); // Se usa para poder guardar en memoria el estado de las conversaciones 
 
             // Create the User state. (Used in this bot's Dialog implementation.)
             services.AddSingleton<UserState>();
@@ -51,7 +55,10 @@ namespace Microsoft.BotBuilderSamples
             services.AddSingleton<RootDialog>();
 
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            services.AddTransient<IBot, QnABotWithMSI<RootDialog>>();
+
+            services.AddTransient<IBot, QnABotWithMSI<RootDialog>>(); // Clase que venia por defecto en el SDK para tener en cuenta
+
+            services.AddTransient<IBot,SuggestActions<RootDialog>>();
 
             ComponentRegistration.Add(new DialogsComponentRegistration());
         }

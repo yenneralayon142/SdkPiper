@@ -3,7 +3,7 @@
 
 using Microsoft.Bot.Builder.AI.QnA;
 
-namespace Microsoft.BotBuilderSamples
+namespace QnABotWithMSI.Contracts
 {
     public interface IBotServices
     {

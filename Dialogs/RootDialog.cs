@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Bot.Builder.AI.QnA.Dialogs;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Extensions.Configuration;
+using QnABotWithMSI.Contracts;
 
 namespace Microsoft.BotBuilderSamples.Dialogs
 {
