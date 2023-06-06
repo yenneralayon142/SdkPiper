@@ -12,6 +12,7 @@ using Microsoft.Bot.Builder.AI.QnA.Models;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Schema;
 using Microsoft.Extensions.Configuration;
+using QnABotWithMSI.Contracts;
 
 namespace Microsoft.BotBuilderSamples.Dialogs
 {
@@ -24,9 +25,9 @@ namespace Microsoft.BotBuilderSamples.Dialogs
         private readonly IBotServices _services;
         private readonly IConfiguration _configuration;
 
-        public const string ActiveLearningCardTitle = "Did you mean:";
-        public const string ActiveLearningCardNoMatchText = "None of the above.";
-        public const string ActiveLearningCardNoMatchResponse = "Thanks for the feedback.";
+        public const string ActiveLearningCardTitle = "Tal vez quisiste decir esto";
+        public const string ActiveLearningCardNoMatchText = "Ninguna de las opciones anteriores";
+        public const string ActiveLearningCardNoMatchResponse = "Gracias por la retroalimentacion";
         private readonly string DefaultAnswer = "";
         private bool _enablePreciseAnswer;
         private bool _displayPreciseAnswerOnly;
